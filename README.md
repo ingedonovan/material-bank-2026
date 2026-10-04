@@ -13,6 +13,7 @@ A digital material bank: each material has a page with its 3D scan, where it has
 | `assets/js/config.js` | Settings: where the data and scans come from | Rarely |
 | `index.html` | Home page | No |
 | `m/index.html` | Material page template: `m/?id=PX-0001` | No |
+| `display/index.html` | Display page: every material in use, floating; for the projected wall (press F for full screen) | No |
 | `assets/` | Styles, scripts and bundled libraries | No |
 
 Materials and events only appear on the site when `approved` is `TRUE`.

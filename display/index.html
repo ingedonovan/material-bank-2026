@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Display — Future Assemblies Material Bank</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/display.css">
+  <script src="../assets/js/config.js"></script>
+  <script src="../assets/vendor/papaparse.min.js"></script>
+  <script src="../assets/js/bank.js"></script>
+</head>
+<body class="page-display">
+  <header class="display-bar">
+    <a class="wordmark" href="../index.html"><img class="logo" src="../assets/img/fa-logo.png" alt="Future Assemblies"><span>Material Bank</span></a>
+    <nav>
+      <a href="../index.html">Index</a>
+      <span class="here">Display</span>
+      <button type="button" id="fs" title="Full screen (F)">Full screen</button>
+    </nav>
+  </header>
+
+  <div id="space" aria-label="Floating field of materials currently in use">
+    <svg id="links" aria-hidden="true"></svg>
+    <div id="field"></div>
+  </div>
+
+  <div id="card" class="dcard" hidden></div>
+
+  <p class="display-legend">
+    <span id="count"></span>
+    <span><svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8a5 5 0 0 1 9-3M13 8a5 5 0 0 1-9 3"/><path d="M12 2v3h-3M4 14v-3h3"/></svg> reconfigurations</span>
+    <span><b>kgCO₂e</b> carbon to date</span>
+    <span class="muted">Hover to trace shared assemblies · click for details</span>
+  </p>
+
+  <script src="../assets/js/display.js"></script>
+</body>
+</html>

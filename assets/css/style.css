@@ -286,3 +286,9 @@ details.fold:not([open]) > summary h2 { margin-bottom: 0; }
 .title-logo { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
 .title-logo .logo { height: 0.82em; width: auto; display: block; }
 .title-logo span { font-weight: 400; }
+/* Link to the display from the other pages */
+.nav-display { font: 12px var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--ink-2); text-decoration: none; border: 1px solid var(--rule); border-radius: 999px; padding: 5px 12px; }
+.nav-display:hover { color: var(--ink); border-color: var(--ink-3); }
+.site-header .nav-display { margin-left: auto; padding: 3px 10px; font-size: 11px; }
+.intro-top { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
+.intro-top h1 { margin: 0; }

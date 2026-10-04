@@ -22,7 +22,7 @@
 
   app.innerHTML = `
     <section class="intro">
-      <h1 class="title-logo"><img class="logo" src="assets/img/fa-logo.png" alt="Future Assemblies"><span>Material Bank</span></h1>
+      <div class="intro-top"><h1 class="title-logo"><img class="logo" src="assets/img/fa-logo.png" alt="Future Assemblies"><span>Material Bank</span></h1><a class="nav-display" href="display/index.html">Display →</a></div>
       <dl class="stats" id="stats"></dl>
     </section>
 
