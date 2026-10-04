@@ -1,0 +1,8 @@
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+~$*
+.vscode/
+node_modules/
+_to_delete/

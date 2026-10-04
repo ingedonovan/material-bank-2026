@@ -1,0 +1,53 @@
+# Runs whenever a file is added or changed in /models.
+# Renames scans to their material ID, shrinks them to 5 MB, makes thumbnails,
+# and saves the results back to the repository. Nothing for students to do.
+name: Process scans
+
+on:
+  push:
+    paths:
+      - "models/**"
+  workflow_dispatch: {}   # lets you run it by hand from the Actions tab
+
+permissions:
+  contents: write
+
+concurrency:
+  group: process-scans
+  cancel-in-progress: false
+
+jobs:
+  scans:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install tools
+        run: |
+          npm install --no-save --no-audit --no-fund @gltf-transform/cli@4 sharp@0.33 playwright@1
+          npx playwright install --with-deps chromium
+
+      - name: Process scans
+        run: |
+          if [ "${{ github.event_name }}" = "push" ] && [ "${{ github.event.before }}" != "0000000000000000000000000000000000000000" ]; then
+            export CHANGED="$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} -- models)"
+          fi
+          node pipeline/process-scans.mjs
+
+      - name: Save results
+        run: |
+          git config user.name "material-bank-bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A models thumbs
+          if git diff --cached --quiet; then
+            echo "Nothing to save."
+          else
+            git commit -m "Process scans: rename, shrink, thumbnails"
+            git push
+          fi

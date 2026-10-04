@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Material — Future Assemblies Material Bank</title>
+  <link rel="stylesheet" href="../assets/vendor/leaflet/leaflet.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/config.js"></script>
+  <script src="../assets/vendor/papaparse.min.js"></script>
+  <script src="../assets/vendor/leaflet/leaflet.js"></script>
+  <script type="module" src="../assets/vendor/model-viewer.min.js"></script>
+  <script src="../assets/js/bank.js"></script>
+</head>
+<body class="page-material">
+  <header class="site-header">
+    <a class="wordmark" href="../index.html"><img class="logo" src="../assets/img/fa-logo.png" alt="Future Assemblies"><span>Material Bank</span></a>
+    <span class="crumb" id="crumb"></span>
+  </header>
+
+  <main id="app" aria-live="polite">
+    <p class="status">Loading material…</p>
+  </main>
+
+  <footer class="site-footer">
+    <span>Carbon in kgCO₂e, attributed per EN 15978 lifecycle module. A1–A3 is counted once, in the material's first life.</span>
+  </footer>
+
+  <script src="../assets/js/carbon-chart.js"></script>
+  <script src="../assets/js/ec-bar.js"></script>
+  <script src="../assets/js/material.js"></script>
+</body>
+</html>
